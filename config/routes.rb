@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/projects" => "projects#index"
-  get "/projects:id" => "projects#show"
+  get "/projects/:id" => "projects#show"
   post "/projects" => "projects#create"
-  delete "/projects:id" => "projects#destroy"
-  patch "/projects:id" => "projects#update"
+  delete "/projects/:id" => "projects#destroy"
+  patch "/projects/:id" => "projects#update"
 
   
 end
