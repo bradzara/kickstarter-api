@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: MyString
+  title: MyString
+  description: MyString
+  goal_amount: MyString
+  start_date: MyString
+  end_date: MyString
+
+two:
+  category_id: MyString
+  title: MyString
+  description: MyString
+  goal_amount: MyString
+  start_date: MyString
+  end_date: MyString
