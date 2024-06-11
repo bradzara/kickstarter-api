@@ -9,13 +9,15 @@
 #   end
 
 
+
 categories = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater']
 
-# populate categories (MODEL SHOULD NOT ALLOW DUPLCATES)
-categories.each do |c|
-  cat = Category.new(name: c)
-  cat.save
-end
+
+# # populate categories (MODEL SHOULD NOT ALLOW DUPLCATES)
+# categories.each do |c|
+#   cat = Category.new(name: c)
+#   cat.save
+# end
 
 
 project_types = ['Project', 'Mission', 'Foundation', 'Initiative', 'Kickstarter']
