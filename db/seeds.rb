@@ -9,17 +9,17 @@
 #   end
 
 
-categories = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film', 'Food', 'Games', 'Journalism', 'Music', 'Photography, Publishing', 'Technology', 'Theater']
+# categories = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film', 'Food', 'Games', 'Journalism', 'Music', 'Photography, Publishing', 'Technology', 'Theater']
 
-# populate categories (MODEL SHOULD NOT ALLOW DUPLCATES)
-categories.each do |c|
-  cat = Category.new(name: c)
-  cat.save
-end
-
-
-3.times do
-  proj = Project.new(title: description: )
+# # populate categories (MODEL SHOULD NOT ALLOW DUPLCATES)
+# categories.each do |c|
+#   cat = Category.new(name: c)
+#   cat.save
+# end
 
 
-end
+# 3.times do
+#   proj = Project.new(title: description: )
+
+
+# end
