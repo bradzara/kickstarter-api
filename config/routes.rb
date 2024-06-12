@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   delete "/projects/:id" => "projects#destroy"
   patch "/projects/:id" => "projects#update"
 
+  # User Routes
+  post "/users" => "users#create"
+
   
 end
