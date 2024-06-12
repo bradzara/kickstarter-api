@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  #Project Routes (love you!)
   get "/projects" => "projects#index"
   get "/projects/:id" => "projects#show"
   post "/projects" => "projects#create"
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
   # User Routes
   post "/users" => "users#create"
 
+  # Sessions Routes
+  post "/sessions" => "sessions#create"
   
 end
