@@ -45,7 +45,7 @@ class RewardsController < ApplicationController
   end
 
   def destroy
-    @reward = Reward.find_by(id: 25)
+    @reward = Reward.find_by(id: params[:id])
     @reward.delete
     
     if @reward.delete
