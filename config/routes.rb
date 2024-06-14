@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   # User Routes
   post "/users" => "users#create"
 
+  #FOR TESTING (should require admin permissions later)
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
+
   # Sessions Routes
   post "/sessions" => "sessions#create"
 
