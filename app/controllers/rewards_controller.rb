@@ -11,7 +11,19 @@ class RewardsController < ApplicationController
   end
 
   def create
-    render json: {message: "hello there"}
+    date = DateTime.parse(params[:delivery_date])
+    @reward = Reward.new()
+    @reward.project_id = params[:project_id]
+    @reward.description = params[:description]
+    @reward.amount = params[:amount]
+    @reward.limit = params[:limit]
+    @reward.delivery_date = date
+
+    if @reward.save
+      render template: "rewards/show"
+    else
+      render json: {ERRORS: reward.errors.full_messages}
+    end
   end
 
   def update
