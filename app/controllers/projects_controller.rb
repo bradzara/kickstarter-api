@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    p current_user # for testing
     @projects = Project.all
     render :index
   end

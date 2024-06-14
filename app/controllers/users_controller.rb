@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   
   def create
     user = User.new(
-      name: params[:name],
+      first: params[:first],
+      last: params[:last],
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
@@ -16,13 +17,24 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.get_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
     render :show
   end
 
   def index
     @users = User.all
     render :index
+  end
+
+  def current
+
+    if current_user
+      @user = User.find_by(id: current_user.id)
+      render :show
+    else
+      render json: {}, status: :unauthorized
+    end
+
   end
 
 end

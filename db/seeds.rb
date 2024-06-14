@@ -13,17 +13,19 @@
 categories = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater']
 
 
-# # populate categories (MODEL SHOULD NOT ALLOW DUPLCATES)
-# categories.each do |c|
-#   cat = Category.new(name: c)
-#   cat.save
-# end
+## populate categories (MODEL SHOULD NOT ALLOW DUPLCATES) 
+## NEED THIS TO POPULATE PROJECTS 
+categories.each do |c|
+  cat = Category.new(name: c)
+  cat.save
+end
 
 
 project_types = ['Project', 'Mission', 'Foundation', 'Initiative', 'Kickstarter']
 project_goals = ['Improvement', 'Development', 'Accessibility', 'Preservation', 'Destruction']
 
 
+### POPULATES THE PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
 10.times do
   str_date = Faker::Date.between(from: '2023-01-01', to: '2026-12-31')
   end_date = str_date + rand(15..450)
