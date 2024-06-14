@@ -11,7 +11,7 @@ class RewardsController < ApplicationController
   end
 
   def create
-    date = DateTime.parse(params[:delivery_date])
+    date = DateTime.strptime(params[:delivery_date], "%m.%d.%Y")
     @reward = Reward.new()
     @reward.project_id = params[:project_id]
     @reward.description = params[:description]
@@ -27,7 +27,21 @@ class RewardsController < ApplicationController
   end
 
   def update
-    render json: {message: "hello there"}
+    new_date = DateTime.strptime(params[:delivery_date], "%m.%d.%Y")
+
+    @reward = Reward.find_by(id: params[:id])
+    @reward.project_id = params[:project_id] || @reward.project_id
+    @reward.description = params[:description] || @reward.description
+    @reward.amount = params[:amount] || @reward.amount
+    @reward.limit = params[:limit] || @reward.limit
+    @reward.delivery_date = new_date || @reward.delivery_date
+   
+    
+    if @reward.save
+      render template: "rewards/show"
+    else
+      render json: {ERRORS: reward.error.full_messages}
+    end 
   end
 
   def destroy
@@ -35,3 +49,4 @@ class RewardsController < ApplicationController
   end
 
 end
+
