@@ -45,7 +45,7 @@ class RewardsController < ApplicationController
   end
 
   def destroy
-    render json: {message: "hello there"}
+    
   end
 
 end
