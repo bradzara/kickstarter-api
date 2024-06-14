@@ -49,3 +49,4 @@ class RewardsController < ApplicationController
   end
 
 end
+
