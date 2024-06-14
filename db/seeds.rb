@@ -47,3 +47,23 @@ project_goals = ['Improvement', 'Development', 'Accessibility', 'Preservation', 
 #   proj.save
 
 # end
+
+
+#REWARD Seeding data
+
+
+# 20.times do
+#   project = rand(1..10)
+#   reward = Reward.new()
+#   reward.project_id = project,
+#   reward.description = "This is a basic description for every reward we currently have. Not custom.",
+#   reward.amount = rand(50),
+#   reward.limit  = 15,
+#   reward.delivery_date = Project.find_by(id: project).end_date + 10
+#   reward.save
+# end
+
+# Reward.all.each do |reward|
+#   reward.project_id = rand(10)
+#   reward.save
+# end

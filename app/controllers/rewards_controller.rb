@@ -1,11 +1,12 @@
 class RewardsController < ApplicationController
 
   def index
-    render json: {message: "hello there"}
+    @rewards = Reward.all
+    render template: "rewards/index"
   end
 
   def show
-    render json: {message: "hello there"}
+    @reward = Reward.find_by(id: 3)
   end
 
   def create
