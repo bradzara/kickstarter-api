@@ -6,7 +6,8 @@ class RewardsController < ApplicationController
   end
 
   def show
-    @reward = Reward.find_by(id: 3)
+    @reward = Reward.find_by(id: params[:id])
+    render template: "rewards/show"
   end
 
   def create
