@@ -15,10 +15,19 @@ Rails.application.routes.draw do
   delete "/projects/:id" => "projects#destroy"
   patch "/projects/:id" => "projects#update"
 
+  #Rewards routes
+  get "/rewards"  => "rewards#index"
+  get "/rewards/:id" => "rewards#show"
+  post "/rewards" =>  "rewards#create"
+  patch "/rewards/:id"  => "rewards#update"
+  delete "/rewards/:id"  => "rewards#destroy"
+
   # User Routes
   post "/users" => "users#create"
 
   # Sessions Routes
   post "/sessions" => "sessions#create"
+
+  
   
 end
