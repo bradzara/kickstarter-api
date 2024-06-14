@@ -40,12 +40,19 @@ class RewardsController < ApplicationController
     if @reward.save
       render template: "rewards/show"
     else
-      render json: {ERRORS: reward.error.full_messages}
+      render json: {ERRORS: reward.errors.full_messages}
     end 
   end
 
   def destroy
+    @reward = Reward.find_by(id: params[:id])
+    @reward.delete
     
+    if @reward.delete
+      render json: {message: "Reward Removed"}
+    else
+      render json: {ERRORS: reward.errors.full_messages}
+    end
   end
 
 end
