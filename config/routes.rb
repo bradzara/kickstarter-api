@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   # User Routes
   post "/users" => "users#create"
+  get "/users/current" => "users#current"
 
   #FOR TESTING (should require admin permissions later)
   get "/users" => "users#index"
