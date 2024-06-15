@@ -3,4 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :first, presence: true
   validates :last, presence: true
+
+  has_many :donation
 end
