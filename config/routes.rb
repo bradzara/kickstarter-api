@@ -7,4 +7,34 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  #Project Routes (love you!)
+  get "/projects" => "projects#index"
+  get "/projects/:id" => "projects#show"
+  post "/projects" => "projects#create"
+  delete "/projects/:id" => "projects#destroy"
+  patch "/projects/:id" => "projects#update"
+
+  #Rewards routes
+  get "/rewards"  => "rewards#index"
+  get "/rewards/:id" => "rewards#show"
+  post "/rewards" =>  "rewards#create"
+  patch "/rewards/:id"  => "rewards#update"
+  delete "/rewards/:id"  => "rewards#destroy"
+
+  # User Routes
+  post "/users" => "users#create"
+  get "/users/current" => "users#current"
+
+  #FOR TESTING (should require admin permissions later)
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
+
+  # Sessions Routes
+  post "/sessions" => "sessions#create"
+
+  get "/donations" => "donations#index"
+  get "/donations/:id" => "donations#show"
+  post "/donations" => "donations#create"
+    
 end
