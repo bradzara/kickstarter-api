@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
   
   def create
+    if params[:admin] == nil
+      admin_confirm = false
+    end
     user = User.new(
       first: params[:first],
       last: params[:last],
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      admin: params[:admin],
+      admin: params[:admin] || admin_confirm,
       image: params[:image] 
     )
     if user.save
