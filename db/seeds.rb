@@ -66,3 +66,15 @@ Reward.all.each do |reward|
   reward.project_id = rand(10)
   reward.save
 end
+
+###ASSIGNING USER IDS TO PROJECTS 
+
+if User.all.empty? == false
+  users_idents = []
+  User.all.each do |user|
+    users_idents << user.id
+  end
+  Projects.all do |project|
+    project.user_id = users_idents.sample(1)
+  end
+end
