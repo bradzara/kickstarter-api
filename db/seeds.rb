@@ -13,8 +13,8 @@
 categories = ['Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater']
 
 
-## populate categories (MODEL SHOULD NOT ALLOW DUPLCATES) 
-## NEED THIS TO POPULATE PROJECTS 
+# populate categories (MODEL SHOULD NOT ALLOW DUPLCATES) 
+# NEED THIS TO POPULATE PROJECTS 
 categories.each do |c|
   cat = Category.new(name: c)
   cat.save
@@ -69,12 +69,9 @@ end
 
 ###ASSIGNING USER IDS TO PROJECTS 
 
-if User.all.empty? == false
-  users_idents = []
-  User.all.each do |user|
-    users_idents << user.id
-  end
-  Projects.all do |project|
-    project.user_id = users_idents.sample(1)
-  end
-end
+# if !User.all.empty?
+#   Project.all.each do |project|
+#     project.user_id = User.ids.sample
+#     project.save
+#   end
+# end
