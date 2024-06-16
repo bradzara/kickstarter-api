@@ -24,8 +24,12 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find_by(id: params[:id])
-    @project.destroy
-    render json: {message: "Project has been deleted."}
+    
+    if @project.destroy
+      render json: {message: "Project has been deleted."}
+    else
+      render json: {Errors: @project.errors.full_messages}
+    end
   end
 
   def update
