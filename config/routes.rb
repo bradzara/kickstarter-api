@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   # Sessions Routes
   post "/sessions" => "sessions#create"
 
-  
-  
+  get "/donations" => "donations#index"
+  get "/donations/:id" => "donations#show"
+  post "/donations" => "donations#create"
+    
 end
