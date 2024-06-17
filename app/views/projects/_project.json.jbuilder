@@ -13,4 +13,6 @@ json.end_date project.end_date
 
 json.donations project.donation
 
+json.image_url project.image_url
+
 
