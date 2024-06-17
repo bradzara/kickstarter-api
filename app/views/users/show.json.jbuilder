@@ -15,6 +15,7 @@ json.admin @user.admin
 #   end
 
 # end
+json.projects @user.project
 
 json.donations do
   json.array! @user.donation do |don|
