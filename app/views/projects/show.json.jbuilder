@@ -10,9 +10,9 @@ json.amount_raised @project.amount_raised
 json.start_date @project.start_date
 json.end_date @project.end_date
 
-json.donations do
+json.donations do  
 
-  json.array! @project.donation do |don|
+  json.array! @project.donation do |don| 
     json.id don.id
     json.amount don.amount
     json.message don.message
@@ -27,3 +27,5 @@ json.donations do
     json.updated_at don.updated_at
   end
 end
+
+
