@@ -19,8 +19,6 @@ categories.each do |c|
 end
 
 
-
-
 #SEED Users if desired:
 User.create(first: "Luke", 
 last: "Skywalker", 
@@ -69,7 +67,7 @@ project_goals = ['Improvement', 'Development', 'Accessibility', 'Preservation', 
 
 messages = ["This project wouldn't exist without our backers!", "Admit it, we cooked with this idea.", "We're revolutionizing the industry.", "Bigger and better rewards coming soon!!", "This is world-changing.", "We've almost reached our goal! Thank you to everyone who believed in our mission.", "This is my final project.", "Not a scam. Pinky promise!"]
 
-## POPULATES THE PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
+## POPULATES THE RANDOM PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
 15.times do
   str_date = Faker::Date.between(from: '2024-04-01', to: '2024-09-01')
   end_date = str_date + rand(15..120)
@@ -94,8 +92,6 @@ messages = ["This project wouldn't exist without our backers!", "Admit it, we co
   end
 end
 
-
-
 # NEW REWARDS SEED
 projects = Project.all
 projects.each do |proj|
@@ -117,27 +113,16 @@ projects.each do |proj|
     i+=1
   end
 end
+#Adding Reward Titles
+reward_titles = ["This Title One", "Reward Type 2", "Have This Reward", "Enjoy with Donation", "Enjoy This Bonus"]
+Reward.all.each do |reward|
+  ran_num = rand(0..reward_titles.length - 1)
+  reward.title = reward_titles[ran_num]
+  reward.save
+end
 
-# # keeping old code in case someone wants to use it
-# #------------------------
-## #REWARD Seeding data
-## projects = Project.all
-## 20.times do
-##   project = projects[rand(projects.length)].id
-##   reward = Reward.new()
-##   reward.project_id = project,
-##   reward.description = "This is a basic description for every reward we currently #have. Not custom.",
-##   reward.amount = rand(50),
-##   reward.limit  = 15,
-##   reward.delivery_date = Project.find_by(id: project).end_date + 10
-##   reward.save
-## end
-#
-## Reward.all.each do |reward|
-##   reward.project_id = rand(10)
-##   reward.save
-## end
-# # --------------------
+
+
 
 ### Generating Donations
 messages = ["", "This is the coolest thing I've ever seen!", "Wow!", "I really hope this project gets the backing it deserves.", "Loving the rewards haha", "This looks pretty cool, excited to see where this goes", "This is the greatest kickstarter of all time.", "Shut up and take my money.", "I doubt this will get backed but it's literally so awesome, I'm gonna tell my friends about it :)"]
@@ -158,5 +143,4 @@ messages = ["", "This is the coolest thing I've ever seen!", "Wow!", "I really h
     pp don.errors
   end
 end
-
 
