@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
         goal_amount: params[:goal_amount],
         start_date: params[:start_date],
         end_date: params[:end_date],
-        user_id: current_user.id
+        user_id: current_user.id,
+        image_url: params[:image_url]
       )
       render :show
     else
@@ -47,7 +48,8 @@ class ProjectsController < ApplicationController
       description: params[:description] || @project.description,
       goal_amount: params[:goal_amount] || @project.goal_amount,
       start_date: params[:start_date] || @project.start_date,
-      end_date: params[:end_date] || @project.end_date
+      end_date: params[:end_date] || @project.end_date,
+      image_url: params[:image_url] || @project.image_url
     )
     render :show
   end

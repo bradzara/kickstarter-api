@@ -19,8 +19,6 @@ categories.each do |c|
 end
 
 
-
-
 #SEED Users if desired:
 User.create(first: "Luke", 
 last: "Skywalker", 
@@ -69,7 +67,7 @@ project_goals = ['Improvement', 'Development', 'Accessibility', 'Preservation', 
 
 messages = ["This project wouldn't exist without our backers!", "Admit it, we cooked with this idea.", "We're revolutionizing the industry.", "Bigger and better rewards coming soon!!", "This is world-changing.", "We've almost reached our goal! Thank you to everyone who believed in our mission.", "This is my final project.", "Not a scam. Pinky promise!"]
 
-## POPULATES THE PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
+## POPULATES THE RANDOM PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
 15.times do
   str_date = Faker::Date.between(from: '2024-04-01', to: '2024-09-01')
   end_date = str_date + rand(15..120)
@@ -93,8 +91,6 @@ messages = ["This project wouldn't exist without our backers!", "Admit it, we co
     pp proj.errors
   end
 end
-
-
 
 # NEW REWARDS SEED
 projects = Project.all
@@ -147,5 +143,4 @@ messages = ["", "This is the coolest thing I've ever seen!", "Wow!", "I really h
     pp don.errors
   end
 end
-
 
