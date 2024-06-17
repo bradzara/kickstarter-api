@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :last, presence: true
 
   #HAS Many Associations
-  has_many :donation
-  has_many :project
+  has_many :donations
+  has_many :projects
+  has_many :rewards, through: :projects
+
 end
