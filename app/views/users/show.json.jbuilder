@@ -3,6 +3,7 @@ json.id @user.id
 json.first @user.first
 json.last @user.last
 json.email @user.email
+json.image @user.image
 
 json.admin @user.admin
 

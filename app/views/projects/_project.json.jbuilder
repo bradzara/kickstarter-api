@@ -1,5 +1,6 @@
 json.id project.id
 json.category_id project.category_id
+json.user_id project.user_id
 
 json.title project.title
 json.description project.description
