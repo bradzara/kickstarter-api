@@ -11,15 +11,20 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(
-      category_id: params[:category_id],
-      title: params[:title],
-      description: params[:description],
-      goal_amount: params[:goal_amount],
-      start_date: params[:start_date],
-      end_date: params[:end_date]
-    )
-    render :show
+    if current_user
+      @project = Project.create(
+        category_id: params[:category_id],
+        title: params[:title],
+        description: params[:description],
+        goal_amount: params[:goal_amount],
+        start_date: params[:start_date],
+        end_date: params[:end_date],
+        user_id: current_user.id
+      )
+      render :show
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
   def destroy
