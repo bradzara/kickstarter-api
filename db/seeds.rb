@@ -111,7 +111,7 @@ projects.each do |proj|
       limit = nil
     end
     delivery_date = proj.end_date + 10
-    reward = Reward.new(project_id: proj.id, description: desc, limit: limit, delivery_date: proj.end_date + 10)
+    reward = Reward.new(project_id: proj.id, description: desc, amount: amount, limit: limit, delivery_date: proj.end_date + 10)
     reward.save
 
     i+=1
