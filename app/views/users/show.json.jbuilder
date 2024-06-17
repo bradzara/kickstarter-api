@@ -8,10 +8,10 @@ json.image @user.image
 json.admin @user.admin
 
 
-json.projects @user.project
+json.projects @user.projects
 
 json.donations do
-  json.array! @user.donation do |don|
+  json.array! @user.donations do |don|
     json.id don.id
     json.amount don.amount
     json.message don.message
