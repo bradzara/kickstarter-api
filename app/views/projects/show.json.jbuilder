@@ -19,7 +19,7 @@ end
 
 json.donations do
 
-  json.array! @project.donation do |don|
+  json.array! @project.donation do |don| 
     json.id don.id
     json.amount don.amount
     json.message don.message
@@ -34,3 +34,5 @@ json.donations do
     json.updated_at don.updated_at
   end
 end
+
+
