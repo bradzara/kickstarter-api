@@ -7,6 +7,6 @@ class User < ApplicationRecord
   #HAS Many Associations
   has_many :donations
   has_many :projects
-  has_many :rewards, through: :project
+  has_many :rewards, through: :projects
 
 end
