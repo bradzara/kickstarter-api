@@ -117,27 +117,16 @@ projects.each do |proj|
     i+=1
   end
 end
+#Adding Reward Titles
+reward_titles = ["This Title One", "Reward Type 2", "Have This Reward", "Enjoy with Donation", "Enjoy This Bonus"]
+Reward.all.each do |reward|
+  ran_num = rand(0..reward_titles.length - 1)
+  reward.title = reward_titles[ran_num]
+  reward.save
+end
 
-# # keeping old code in case someone wants to use it
-# #------------------------
-## #REWARD Seeding data
-## projects = Project.all
-## 20.times do
-##   project = projects[rand(projects.length)].id
-##   reward = Reward.new()
-##   reward.project_id = project,
-##   reward.description = "This is a basic description for every reward we currently #have. Not custom.",
-##   reward.amount = rand(50),
-##   reward.limit  = 15,
-##   reward.delivery_date = Project.find_by(id: project).end_date + 10
-##   reward.save
-## end
-#
-## Reward.all.each do |reward|
-##   reward.project_id = rand(10)
-##   reward.save
-## end
-# # --------------------
+
+
 
 ### Generating Donations
 messages = ["", "This is the coolest thing I've ever seen!", "Wow!", "I really hope this project gets the backing it deserves.", "Loving the rewards haha", "This looks pretty cool, excited to see where this goes", "This is the greatest kickstarter of all time.", "Shut up and take my money.", "I doubt this will get backed but it's literally so awesome, I'm gonna tell my friends about it :)"]
