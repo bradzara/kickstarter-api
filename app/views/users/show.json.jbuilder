@@ -7,6 +7,15 @@ json.image @user.image
 
 json.admin @user.admin
 
+
+##DIGGING DEEP TO GET THE REWARDS ASSOCIATED WITH PROJECT ID
+# json.rewards do
+#   json.array! @rewards.project_id do |proj_reward|
+#     if 
+#   end
+
+# end
+
 json.donations do
   json.array! @user.donation do |don|
     json.id don.id
