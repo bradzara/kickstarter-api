@@ -7,6 +7,8 @@ json.image @user.image
 
 json.admin @user.admin
 
+json.projects @user.project
+
 json.donations do
   json.array! @user.donation do |don|
     json.id don.id
