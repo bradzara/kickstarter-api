@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   #HAS Many Associations
   has_many :donation
+  has_many :project
 end
