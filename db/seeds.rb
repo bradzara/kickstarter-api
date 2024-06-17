@@ -60,12 +60,30 @@ users = User.all
 
 
 
+### INSERT CUSTOM PROJECTS HERE
+
+title = "Adopting a new Dog"
+des = "Please help me adopt this dog. I'll give him all my love and never let anything happen to him."
+img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBVFXKvpoEzhYMvCLO6vPIgF-xJLhSuflmt87HGkIy8N9oZ9wllsmAbfXqFDnQ9TsJhA&usqp=CAU"
+str_date = Faker::Date.between(from: '2024-04-01', to: '2024-09-01')
+end_date = str_date + rand(15..120)
+goal_amount = 600
+
+proj = Project.new(category_id: Category.first.id, title: title, description: des, goal_amount: goal_amount, start_date: str_date, end_date: end_date, user_id: User.find_by(email: 'john@gmail.com').id, image_url: img)
+if not proj.save
+  pp proj.errors
+end
+
+#---------------------------
+
 
 project_superlatives = ['Crowd-Funded', 'Amazing', 'Half-Baked', 'Worldwide', 'Unoriginal', 'Innovative', 'Religious', 'Greatest']
 project_types = ['Project', 'Mission', 'Foundation', 'Initiative', 'Kickstarter']
 project_goals = ['Improvement', 'Development', 'Accessibility', 'Preservation', 'Destruction']
 
 messages = ["This project wouldn't exist without our backers!", "Admit it, we cooked with this idea.", "We're revolutionizing the industry.", "Bigger and better rewards coming soon!!", "This is world-changing.", "We've almost reached our goal! Thank you to everyone who believed in our mission.", "This is my final project.", "Not a scam. Pinky promise!"]
+
+images = ["https://img.freepik.com/free-photo/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.jpg", "https://www.epidemicsound.com/blog/content/images/size/w2000/2023/05/what-is-royalty-free-music-header.webp", "https://www.poynter.org/wp-content/uploads/2019/02/2.Journalism-Fundamentals-June-2022.png", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT0XanS-zY2amtRDJ3gPw5jo2KbRhCVAh8xQ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz09fAl5_eoIvPeL-TMX_UoUgkx9pJaqD0VA&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsLiY8nDX3q-95uvIK_QoD1ve0KO9OxHbEiA&s", "https://jetpackcomics.com/wp-content/uploads/2018/10/stacks-of-comic-books.png", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX4VNKCg0WkEnPaG3PzaNPgYhhl03XaqJeww&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAxrpbb-pzxj3EcG4e6_YgojhBohwf8imqew&s", "https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
 
 ## POPULATES THE RANDOM PROJECTS DATABASE IF UNCOMMENTED. rails db:seed
 15.times do
@@ -86,7 +104,7 @@ messages = ["This project wouldn't exist without our backers!", "Admit it, we co
 
   user_id = User.find_by(id: users[rand(0...users.length)]).id
 
-  proj = Project.new(category_id: category_id, title: title, description: description, goal_amount: goal_amount, start_date: str_date, end_date: end_date, user_id: user_id)
+  proj = Project.new(category_id: category_id, title: title, description: description, goal_amount: goal_amount, start_date: str_date, end_date: end_date, user_id: user_id, image_url: images[rand(0...images.length)])
   if not proj.save
     pp proj.errors
   end

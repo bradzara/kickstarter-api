@@ -35,4 +35,6 @@ json.donations do
   end
 end
 
+json.image_url @project.image_url
+
 

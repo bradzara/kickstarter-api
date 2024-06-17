@@ -17,4 +17,7 @@ json.array! @projects do |project|
     json.email project.user.email
     json.image project.user.image
   end
+
+  json.image_url project.image_url
+  
 end
